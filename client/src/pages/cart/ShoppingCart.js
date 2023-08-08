@@ -11,7 +11,7 @@ const ShoppingCart = () => {
   const dispatch = useDispatch();
   const { cartData } = useSelector((state) => state.cart);
   const [applyCoupon, setApplyCoupon] = useState(false);
-  const userId = localStorage.getItem('userId').replace(/"/g, '')
+  const userId = localStorage.getItem('userId')?.replace(/"/g, '')
  
   useEffect(()=>{
       dispatch(getCartDetails(userId));

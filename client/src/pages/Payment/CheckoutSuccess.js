@@ -8,7 +8,7 @@ const CheckoutSuccess = () => {
   const navigate = useNavigate();
   const searchParams = new URLSearchParams(location.search);
   const sessionId = searchParams.get('session_id');
-  let userId = localStorage.getItem('userId').replace(/"/g, '');
+  let userId = localStorage.getItem('userId')?.replace(/"/g, '');
   const [orderDetails, setOrderDetails] = useState([]);
 
   useEffect(() => {

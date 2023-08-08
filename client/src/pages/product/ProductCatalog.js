@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-// import { updateCart } from '../../Redux/Slice/cart';
+import { useDispatch } from 'react-redux';
 import {updateCartDetails} from "../../Redux/reduxThunk/cart";
 import {getCartDetails} from "../../Redux/reduxThunk/cart";
 import { Row, Container } from 'react-bootstrap';
@@ -11,8 +10,7 @@ import * as api from "../../Redux/api";
 const ProductCatalog = () => {
   const [products, setProducts] = useState([]);
   const dispatch =useDispatch()
-  const {cartData} =useSelector((state)=>state.cart);
-  const userId=localStorage.getItem('userId').replace(/"/g, '')
+  const userId=localStorage.getItem('userId')?.replace(/"/g, '')
   
   useEffect(() => {
     const fetchProducts = async () => {

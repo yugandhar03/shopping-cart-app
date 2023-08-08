@@ -3,7 +3,7 @@ import { Button } from 'react-bootstrap'
 import * as api from "../Redux/api";
 
 function PaymentButton({ cart, applyCoupon }) {
-  const userId= localStorage.getItem('userId').replace(/"/g, '')
+  const userId= localStorage.getItem('userId')?.replace(/"/g, '')
   //This function will call the checkout api
   const handleCheckout = async () => {
     await api.checkout({
